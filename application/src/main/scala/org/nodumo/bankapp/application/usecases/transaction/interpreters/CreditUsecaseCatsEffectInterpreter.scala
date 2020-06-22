@@ -75,7 +75,7 @@ class CreditUsecaseCatsEffectInterpreter(
       .create(creditTransaction)
       .bimap(factoryTransactionErrorServiceDomainValueError.create, id)
 
-  /* Raw domain object -> (TransactionError  OR Domain credit transaction) */
+  /* Raw domain object -> dayTransactions -> weekTransactions -> (TransactionError  OR Domain credit transaction) */
   private def validateTransaction(
       creditTransaction: CreditTransaction,
       dailyTransactionFrame: List[CreditTransaction],
