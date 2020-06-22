@@ -8,9 +8,9 @@ final class CreditTransactionResponseTest extends Specification {
   def is = s2"""
 
  This is a specification to check the 'CreditTransactionResponse' class:
-   contain 11 characters                                         $succeedTransactionSuccess
-   start with 'Hello'                                            $succeedTransactionFailure
-   end with 'world'                                              $creditTransactionResponseSerializeSuccess
+   succeedTransactionSuccess                                     $succeedTransactionSuccess
+   succeedTransactionFailure                                     $succeedTransactionFailure
+   creditTransactionResponseSerializeSuccess                     $creditTransactionResponseSerializeSuccess
                                                                  """
 
   private val creditTransactionResponseSuccess1 = CreditTransactionResponse.succeedTransaction("1230", "2332323")
@@ -23,6 +23,6 @@ final class CreditTransactionResponseTest extends Specification {
 
   def succeedTransactionFailure = creditTransactionResponseSuccess1.customer_id.length must be greaterThan 2
 
-  def creditTransactionResponseSerializeSuccess = "Hello world" must endWith("world")
+  def creditTransactionResponseSerializeSuccess =  creditTransactionResponseSuccess1.customer_id.length must be greaterThan 2
 
 }
