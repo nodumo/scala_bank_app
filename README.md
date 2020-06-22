@@ -6,6 +6,12 @@ This was an attempt to process application transaction data events one by one fr
 I took the basic stipulation and sought to demonstrate how best the problem could be modelled 
 as a real application solution in two days time and came about 90% of the way there. 
 
+Yes, firing up NodeJS  and using MomentJS and an JS array as a transactions store would have been easier!
+However, I am of the strong opionion that software is better when it is manatainable, good types, seperation of concerns, and types make 
+sofware a lot easier to understand and maintain!    
+
+Because as of recent I have been learning some Scala, I have decided to push myself attemptin to solve this challenge in the Scala way!
+
 # Application design pattern used 
 1. Onion Architecture 
 2. Domain Driven Design 
@@ -34,7 +40,7 @@ sbt run test
         * src/
         * test/ (Test coverage for validation but not constructors)
     * infrastructure/(Infrastructural concerns)
-        * src/
+        * src/ (Repository for inserting a transaction and reading the transaction) 
         * test/
     * project/(No Test coverage for validation)
         * build.properties
