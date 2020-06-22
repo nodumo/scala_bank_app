@@ -1,0 +1,13 @@
+package org.bankapp.nodumo.common.customisationother.joda
+
+package object interpreters {
+
+  object dateTimeFactoryServiceFromJavaSqlDateTime extends DateTimeFactoryServiceJavaSqlDateTimeInterpreter
+
+  object dateTimeGetPreviousDaysService extends DateTimeGetPreviousDaysServiceInterpreter
+
+  object dateTimeGetPreviousWeekService extends DateTimeGetPreviousWeeksServiceInterpreter
+
+  object dateTimeParseServiceNormalizedUTCInterpreter extends DateTimeParseServiceNormalizedUTCInterpreter
+
+}

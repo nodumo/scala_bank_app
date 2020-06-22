@@ -1,0 +1,7 @@
+/* Define database  */
+CREATE TABLE accountevents (
+  "id" VARCHAR (50) NOT NULL,
+  "customerid" VARCHAR (50) NOT NULL,
+  "loadAmount" bigint,
+  "time" TIMESTAMP NOT NULL
+);
