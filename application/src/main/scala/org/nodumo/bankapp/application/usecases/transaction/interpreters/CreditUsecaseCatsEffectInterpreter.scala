@@ -101,7 +101,10 @@ class CreditUsecaseCatsEffectInterpreter(
             previousWeek(timeStamp.value))
           response <- validateTransaction(creditTransaction, oneDayTransactionsFrame, oneWeekTransactionSample) match {
             // If Left(error) then we have encountered a validation error return an error
-            case Left(_) => monad.pure(failedTransaction(event.id, event.customer_id))
+            case Left(e) =>
+              println(e)
+              monad.pure(failedTransaction(event.id, event.customer_id))
+
             // If right then create a new record of transaction and then return a response
             case Right(_) =>
               transactionRepository.createCreditTransaction(creditTransaction) >> monad.pure(
